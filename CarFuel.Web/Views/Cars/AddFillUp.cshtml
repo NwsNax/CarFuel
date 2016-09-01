@@ -1,0 +1,44 @@
+﻿@using CarFuel.Models;
+@model FillUp
+
+@{
+    ViewBag.Title = "FillUp";
+}
+
+<h2>AddFillUp</h2>
+<h3>
+  @ViewBag.CarName 
+</h3>
+
+@using (Html.BeginForm()) {
+
+  <fieldset>
+
+    <!-- Form Name -->
+    <legend>NEW CARS</legend>
+
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Odometer : </label>
+      <div class="col-md-4">        
+        @Html.TextBoxFor(m => m.Odometer, new { @class = "form-control input-md" })        
+      </div>
+    </div>
+    <!-- Text input-->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="textinput">Liters : </label>
+      <div class="col-md-4">        
+        @Html.TextBoxFor(m => m.Liters, new { @class = "form-control input-md" })
+      </div>
+    </div>
+
+    <!-- Button -->
+    <div class="form-group">
+      <label class="col-md-4 control-label" for="add"></label>
+      <div class="col-md-4">
+        <button type="submit" name="add" class="btn btn-primary" id="add">Add</button>
+      </div>
+    </div>
+
+  </fieldset>
+}

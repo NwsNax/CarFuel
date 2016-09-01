@@ -1,0 +1,26 @@
+﻿@using app= CarFuel.Models;
+@model IEnumerable<app.Car>
+
+@{
+  app.User appUser = (app.User)ViewBag.AppUser;
+}
+
+<h2>Cars</h2>
+<hr />
+@foreach (var c in Model) {
+  <div class="car-name">
+   <a href="~/Cars/AddFillUp/@c.Id">
+     <img src="~/Images/car1.jpg" width="100" height="40" />
+   </a> 
+    <h3>@c.Name</h3>    
+  </div>
+}
+<br />
+<a href="~/Cars/Add" class="btn btn-success btn-sm">Add Car</a>
+<br /><br />
+<div class="well well-sm">
+
+  @appUser.Displayname<br />
+  @appUser.ConsumptionRate.ToString()<br />
+  You have<span id="total">@Model.Count()</span>car(s).
+</div>
